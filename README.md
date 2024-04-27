@@ -1,6 +1,6 @@
-# In-Memory Key-Value Store
+# In-Memory Database
 
-This is a simple implementation of an in-memory key-value store with transaction support in Python. The database allows you to set key-value pairs where keys are strings and values are integers. It supports transactions which allows you to make multiple changes atomically.
+This is a simple implementation of an in-memory database with transaction support in Python. The database allows you to set key-value pairs where keys are strings and values are integers. It supports transactions which allows you to make multiple changes atomically.
 
 ## Features
 
