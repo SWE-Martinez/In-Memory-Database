@@ -10,9 +10,18 @@ This is a simple implementation of an in-memory database with transaction suppor
 - `commit`: Commit the changes made in the current transaction.
 - `rollback`: Roll back the changes made in the current transaction.
 
-## Usage
+## Quick Setup and Running
 
-First, import the `InMemoryDB` class from the `in_memory_db.py`:
+To use this module, no special setup is required apart from having Python installed on your system. Clone or download the repository, navigate to the directory containing `in_memory_db.py`, and run the Python shell or scripts within the same directory.
+
+Example to run a simple test from the command line:
+```shell
+python -c "from in_memory_db import InMemoryDB; db = InMemoryDB(); db.begin_transaction(); db.put('test', 123); print(db.get('test')); db.commit(); print(db.get('test'))"
+```
+
+## In File Library Usage 
+
+If you want to use this in your own python file, first, import the `InMemoryDB` class from the `in_memory_db.py`:
 ```python
 file from in_memory_db import InMemoryDB
 ```
@@ -42,6 +51,13 @@ value = db.get("test")  # Should still return `1`
 ```
 
 Remember, all changes made in a transaction are not visible until the transaction is committed.
+
+## Modification Suggestions for Official Assignment
+For future assignments, it may be beneficial to:
+
+- Specify the expected behavior when methods are called outside of their intended use, such as calling commit without an active transaction.
+- Include examples that cover edge cases, such as updating the same key multiple times within a transaction.
+- Consider providing a template for exceptions to standardize error messages and simplify the grading process.
 
 ## Exceptions
 - Trying to put without a transaction in progress will raise an exception.
